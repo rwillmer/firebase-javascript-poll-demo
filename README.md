@@ -47,13 +47,14 @@ Please feel free to download and play. You'll need a (free) account at Firebase 
 
 7. Run Locally
 
-   ```bash
+    ```bash
     gulp serve-dev
     ```
 
 8. Run at Firebase
 
    ```bash
+    npm install -g firebase-tools
     gulp build
     firebase init
     firebase deploy
