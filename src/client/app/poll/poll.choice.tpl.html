@@ -1,0 +1,31 @@
+<div class="media"  ng-click='vm.toggle()'>
+    <div class="media-left">
+        <button type="button" class="btn btn-default btn-lg">
+            <div>
+                <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+            </div>
+            <div>
+                {{choice.count}}
+                <br/>
+                {{choice.people.length}}
+            </div>
+        </button>
+    </div>
+    <div class="media-body">
+        <h3 class='media-heading'>
+            {{choice.name}}
+        </h3>
+        <ul class='list-inline'>
+            <li ng-repeat='person in choice.people'>
+                <a href='http://twitter.com/{{person.userName}}'>
+                    <img ng-src="{{person.imageUrl}}" width='35px' height='35px'>
+                </a>
+            </li>
+        </ul>
+        <ul class='list-inline'>
+            <li ng-repeat='person in choice.people'>
+                <a href='http://twitter.com/{{person.userName}}'>{{person.userName}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

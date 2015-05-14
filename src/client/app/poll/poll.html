@@ -1,0 +1,58 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wblue" ng-if="vm.authData === null">
+                    <div ht-widget-header title="Please Login"></div>
+                    <div class="widget-content">
+
+                        <!-- Login buttons -->
+                        <div id="loginButtons" ng-hide="vm.authData">
+    <!--
+                          <div id="gitHubLoginButton" ng-click="joinGame('github')">
+                            <img src="./images/gitHubLogo.png" />
+                            <p>Join Team GitHub</p>
+                          </div>
+    -->
+                          <div id="twitterLoginButton" ng-click="vm.loginWith('twitter')"
+                            class='btn btn-info btn-lg'>
+                            <img src="./images/twitterLogo.png" width='25px' height='25px'/>
+                            Login with Twitter
+                          </div>
+
+                          <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div ng-if="vm.authData !== null">
+                            Logged in as {{vm.user.userName}} on {{vm.user.provider}}.
+                            <button class='btn btn-info btn-sm' ng-click="vm.logout()">
+                                Logout
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="widget wviolet" ng-if="vm.authData !== null">
+                    <div ht-widget-header title="Which Javascript Technologies Do You Use?"></div>
+                    <div class="widget-content user">
+                    <h3>We use...</h3>
+                    <ul class='voting-table'>
+                        <li demo-poll-choice ng-repeat="choice in vm.choices|reverse">
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="widget-foot">
+                        <div ng-if="vm.authData !== null">
+                            Logged in as {{vm.user.userName}} on {{vm.user.provider}}.
+                            <button class='btn btn-info btn-sm' ng-click="vm.logout()">
+                                Logout
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
